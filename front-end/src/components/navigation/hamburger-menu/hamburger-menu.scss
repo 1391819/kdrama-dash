@@ -1,0 +1,97 @@
+@use '../../../scss/' as *;
+
+.hamburger-menu {
+	display: none;
+	z-index: 100;
+
+	a:hover {
+		color: $main-color;
+	}
+
+	@include tablet {
+		display: unset;
+	}
+
+	.open-menu-icon {
+		font-size: $header-icon-size;
+		cursor: pointer;
+		color: $txt-color;
+		@include flex(center, unset, unset);
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+
+	.close-menu-icon {
+		font-size: $header-icon-size;
+		cursor: pointer;
+		color: $txt-color;
+		@include flex(center, unset, unset);
+		margin-top: 2.4rem;
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+
+	&__overlay {
+		position: fixed;
+		background-color: $body-bg;
+		opacity: 0.999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
+
+	&__content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-left: 2rem;
+		@include flex(flex-start, flex-start, column);
+	}
+
+	.nav-links {
+		@include flex(flex-start, unset, column);
+		margin-top: 5rem;
+
+		p {
+			padding: 1rem 0;
+		}
+
+		li {
+			padding: 7px 0;
+			font-weight: 600;
+			position: relative;
+			font-size: $nav-link-size;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 2px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				transition: width 0.5s ease;
+				height: 2px;
+				background-color: $main-color;
+			}
+
+			&.active::after,
+			&:hover::after {
+				width: 100%;
+			}
+
+			.link {
+				@include flex(center, unset, row);
+
+				.icon {
+					@include flex(center, center, row);
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+}

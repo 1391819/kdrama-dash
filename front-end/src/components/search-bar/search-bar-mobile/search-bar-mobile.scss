@@ -1,0 +1,130 @@
+@use '../../../scss/' as *;
+
+.search-bar-mobile {
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: $header-height;
+		background-color: $black;
+		z-index: 200;
+		width: 100%;
+		@include flex(center, unset, row);
+		gap: 3rem;
+
+		input {
+			border: 0;
+			background-color: $body-bg;
+			padding: 0.5rem 1rem;
+			margin-left: 2rem;
+			font-size: $p-size;
+			color: $txt-color;
+			font-family: $font-family;
+			outline: none;
+			border-radius: $border-radius;
+			flex: 1;
+		}
+
+		.close-search-icon {
+			font-size: $header-icon-size;
+			@include flex(center, center, unset);
+			color: $txt-color;
+			cursor: pointer;
+			margin-right: 2rem;
+
+			&:hover {
+				color: $main-color;
+			}
+		}
+	}
+
+	&__icon {
+		font-size: $header-icon-size - 0.2;
+		@include flex(center, center, unset);
+		color: $txt-color;
+		cursor: pointer;
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+}
+
+.search-overlay {
+	position: fixed;
+	background-color: $body-bg;
+	opacity: 0.9;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+.search-results-mobile {
+	position: absolute;
+	background-color: $black;
+	left: 0;
+	top: 0;
+	margin-top: $header-height;
+	z-index: 200;
+	padding: 0.8rem;
+	width: 100%;
+	color: $txt-color;
+	text-align: left;
+
+	p {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+	}
+
+	.results-elements {
+		overflow: scroll;
+		max-height: 50vh;
+
+		&__item {
+			margin-bottom: 0.3rem;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: $border-radius;
+			padding: 0.5rem;
+			margin-right: 0.5rem;
+			@include flex(unset, flex-start, row);
+
+			&:hover {
+				color: $txt-color;
+				cursor: pointer;
+				background-color: $main-color;
+			}
+
+			.poster {
+				margin-right: 2rem;
+				background-position: top;
+				background-repeat: none;
+				background-size: cover;
+				border-radius: $border-radius;
+				aspect-ratio: 2 / 3;
+				flex: 0 0 10em;
+			}
+
+			.details {
+				@include flex(unset, unset, column);
+				flex-wrap: wrap;
+			}
+		}
+
+		&::-webkit-scrollbar:horizontal {
+			display: none;
+		}
+
+		&::-webkit-scrollbar:vertical {
+			display: unset;
+			-ms-overflow-style: unset;
+		}
+
+		&::-webkit-scrollbar-thumb:vertical {
+			background-color: $main-color;
+			border-radius: $border-radius;
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+		}
+	}
+}

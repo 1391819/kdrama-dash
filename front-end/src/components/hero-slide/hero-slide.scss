@@ -1,0 +1,178 @@
+@use './../../scss/' as *;
+
+.banner {
+	border-radius: $border-radius;
+}
+
+.hero-slide {
+	@include flex(unset, unset, row);
+	flex-wrap: nowrap;
+	border-radius: $border-radius;
+}
+
+.slide {
+	border-radius: $border-radius;
+	flex: 0 0 100%;
+	opacity: 0;
+
+	&__image {
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: $border-radius;
+		aspect-ratio: 16 / 9;
+		transition: transform 0.2s ease-in-out;
+
+		@include mobile {
+			aspect-ratio: 4 / 3;
+		}
+	}
+
+	&__overlay {
+		height: 100%;
+		@include flex(flex-end, center, unset);
+		background-color: $body-bg;
+		mask-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0) 0%,
+			rgba(255, 255, 255, 1) 80%
+		);
+		opacity: 0.9;
+		border-radius: $border-radius - 0.2rem;
+
+		&__buttons {
+			height: 100%;
+			font-size: $h1-size;
+			@include flex(center, center, unset);
+			cursor: pointer;
+			border-radius: $border-radius;
+			padding-left: 1rem;
+
+			&:last-child {
+				padding-right: 1rem;
+				padding-left: 0;
+			}
+
+			&:hover {
+				color: $main-color;
+				background-color: rgb(14, 13, 13);
+				mask-image: linear-gradient(
+					to top,
+					rgba(0, 0, 0, 0) 0%,
+					rgba(255, 255, 255, 1) 80%
+				);
+			}
+		}
+
+		&__text {
+			@include flex(flex-start, flex-end, column);
+			width: 100%;
+			height: 100%;
+			border-radius: $border-radius;
+			padding: 4.5rem 4rem;
+
+			h2 {
+				font-size: $h1-size;
+
+				@include mobile {
+					font-size: $h2-size;
+				}
+			}
+
+			p {
+				font-size: $nav-link-size;
+
+				@include mobile {
+					font-size: $p-size;
+				}
+			}
+
+			.header__rating {
+				background-color: $main-color;
+				@include flex(center, center, unset);
+				padding: 0.2rem 0.5rem;
+				border-radius: 0.2rem;
+			}
+
+			&__inner {
+				@include flex(center, center, row);
+				gap: 1rem;
+				margin-top: 1.5rem;
+
+				@include mobile {
+					margin-top: 1rem;
+				}
+			}
+
+			.index-indicator {
+				@include flex(center, center, row);
+				gap: 0.5rem;
+				margin-top: 0.7rem;
+				border-radius: 3px;
+				opacity: 0.9;
+
+				.circle {
+					width: 10px;
+					height: 10px;
+					background-color: $white;
+					border-radius: 2px;
+					overflow: hidden;
+
+					@include tablet {
+						width: 8px;
+						height: 8px;
+					}
+
+					@include mobile {
+						width: 6px;
+						height: 6px;
+					}
+
+					.mover {
+						width: 10px;
+						height: 10px;
+						border-radius: 2px;
+						background-color: $main-color;
+						transition: transform 0.3s ease;
+
+						@include tablet {
+							width: 8px;
+							height: 8px;
+						}
+
+						@include mobile {
+							width: 6px;
+							height: 6px;
+						}
+					}
+				}
+			}
+
+			@include tablet {
+				padding: 3.5rem 2rem;
+			}
+
+			@include mobile {
+				padding: 3.5rem 2rem;
+			}
+		}
+	}
+}
+
+.activeSlide {
+	opacity: 1;
+	transition: opacity 0.6s ease-in-out;
+	z-index: 1;
+}
+
+.lastSlide {
+	position: absolute;
+	visibility: hidden;
+	z-index: 0;
+}
+
+.nextSlide {
+	position: absolute;
+	visibility: hidden;
+	z-index: 0;
+}

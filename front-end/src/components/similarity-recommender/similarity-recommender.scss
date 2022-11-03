@@ -1,0 +1,20 @@
+@use '../../scss/' as *;
+
+.recommendations-container {
+	width: 100%;
+	display: grid;
+	gap: 15px 20px;
+	grid-template-columns: repeat(5, 1fr);
+
+	h3 {
+		font-size: $h4-size;
+	}
+
+	@include tablet {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	@include mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

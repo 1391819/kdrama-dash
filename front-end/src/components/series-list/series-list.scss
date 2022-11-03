@@ -1,0 +1,28 @@
+@use '../../scss/' as *;
+
+.series-list-carousel {
+	display: grid;
+	gap: 1.5rem;
+	grid-auto-flow: column;
+	grid-auto-columns: 25%;
+
+	padding-bottom: 2rem;
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+
+	@include tablet {
+		grid-auto-columns: 30%;
+	}
+
+	@include medium-tablet {
+		grid-auto-columns: 40%;
+	}
+}
+
+.snaps-inline {
+	scroll-snap-type: inline mandatory;
+
+	> * {
+		scroll-snap-align: start;
+	}
+}

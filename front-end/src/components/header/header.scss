@@ -1,0 +1,19 @@
+@use '../../scss/' as *;
+
+.header {
+	height: $header-height;
+
+	h1 {
+		font-size: $h1-size;
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+
+	&__wrap {
+		@include flex(center, space-between, row);
+		height: 100%;
+		padding: 0 2rem;
+	}
+}

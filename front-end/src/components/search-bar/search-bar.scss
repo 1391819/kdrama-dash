@@ -1,0 +1,107 @@
+@use '../../scss/' as *;
+
+.search-container {
+	position: relative;
+}
+
+.search-bar {
+	@include flex(center, flex-end, row);
+	border-radius: $border-radius;
+	background-color: $black;
+	padding: 0.2rem 0 0.2rem 0.5rem;
+	position: relative;
+
+	&__input {
+		input {
+			border: 0;
+			background-color: $black;
+			padding: 0.5rem 1rem;
+			font-size: $p-size;
+			color: $txt-color;
+			font-family: $font-family;
+			outline: none;
+			border-radius: $border-radius;
+		}
+	}
+
+	&__icon {
+		font-size: $header-icon-size - 0.2;
+		@include flex(center, center, unset);
+		color: $txt-color;
+		margin-right: 0.5rem;
+		cursor: pointer;
+
+		&:hover {
+			color: $main-color;
+		}
+	}
+}
+
+.search-results {
+	position: absolute;
+	top: 105%;
+	background-color: $black;
+	padding: 0.5rem;
+	z-index: 1000;
+	font-size: $p-size;
+	color: $txt-color;
+	text-align: left;
+	list-style: none;
+	border-radius: $border-radius;
+	width: 35.5rem;
+
+	p {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+	}
+
+	.results-elements {
+		overflow: scroll;
+		max-height: 50vh;
+
+		&__item {
+			margin-bottom: 0.3rem;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: $border-radius;
+			padding: 0.5rem;
+			margin-right: 0.5rem;
+			@include flex(unset, flex-start, row);
+
+			&:hover {
+				color: $txt-color;
+				cursor: pointer;
+				background-color: $main-color;
+			}
+
+			.poster {
+				margin-right: 2rem;
+				background-position: top;
+				background-repeat: none;
+				background-size: cover;
+				border-radius: $border-radius;
+				aspect-ratio: 2 / 3;
+				flex: 0 0 8em;
+			}
+
+			.details {
+				@include flex(unset, unset, column);
+				flex-wrap: wrap;
+			}
+		}
+
+		&::-webkit-scrollbar:horizontal {
+			display: none;
+		}
+
+		&::-webkit-scrollbar:vertical {
+			display: unset;
+			-ms-overflow-style: unset;
+		}
+
+		&::-webkit-scrollbar-thumb:vertical {
+			background-color: $main-color;
+			border-radius: $border-radius;
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+		}
+	}
+}

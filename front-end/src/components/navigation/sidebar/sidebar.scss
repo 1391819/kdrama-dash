@@ -1,0 +1,56 @@
+@use '../../../scss/' as *;
+
+.sidebar-menu {
+	a:hover {
+		color: $main-color;
+	}
+
+	width: 170px;
+
+	@include tablet {
+		display: none;
+	}
+
+	.nav-links {
+		@include flex(flex-start, unset, column);
+		margin-left: 2rem;
+		margin-top: 4rem;
+
+		p {
+			padding: 1rem 0;
+		}
+
+		li {
+			padding: 7px 0;
+			font-weight: 600;
+			position: relative;
+			font-size: $nav-link-size;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 2px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				transition: width 0.5s ease;
+				height: 2px;
+				background-color: $main-color;
+			}
+
+			&.active::after,
+			&:hover::after {
+				width: 100%;
+			}
+
+			.link {
+				@include flex(center, unset, row);
+
+				.icon {
+					@include flex(center, center, row);
+					padding-right: 1rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@use '../../scss/' as *;
+
+.overlay {
+	height: 100%;
+	background-color: $body-bg;
+	border-radius: $border-radius - 0.5;
+	transition: 0.3s ease-in-out;
+	opacity: 0;
+
+	.hover-content {
+		@include flex(flex-end, center, column);
+		height: 100%;
+
+		.hover-content-details {
+			//@include flex(center, center, unset);
+			height: 100%;
+			padding: 0.5rem;
+			width: 100%;
+
+			&__icon {
+				@include flex(center, unset, unset);
+				border-radius: $border-radius;
+				font-size: 2rem;
+				//background-color: $main-color;
+				padding: 0.5rem;
+				color: $white;
+			}
+		}
+
+		&__rating-icon {
+			width: 15%;
+			margin: 1rem;
+		}
+	}
+
+	&:hover {
+		opacity: 0.9;
+	}
+}

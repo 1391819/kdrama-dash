@@ -1,0 +1,103 @@
+@use '../../scss/' as *;
+
+.series-filters {
+	@include flex(center, unset, unset);
+	flex-wrap: wrap;
+
+	@include mobile {
+		display: none;
+	}
+
+	.filter-item {
+		@include flex(center, unset, column);
+		margin-right: 1rem;
+		position: relative;
+		border: 1px solid $main-color;
+		border-radius: $border-radius;
+		padding: 0.2rem 0.5rem;
+		cursor: pointer;
+
+		p {
+			margin-bottom: 0.5rem;
+			color: $main-color;
+			font-size: $p-size;
+		}
+
+		&__content {
+			@include flex(center, space-between, unset);
+
+			&[aria-expanded='true'] {
+				.dropdown-btn {
+					&::before {
+						transform: rotate(45deg);
+						margin-top: -2px;
+						background-color: $main-color;
+					}
+
+					&::after {
+						margin-top: -2px;
+						width: 16px;
+						transform: rotate(-45deg);
+						background-color: $main-color;
+					}
+				}
+			}
+
+			.dropdown-btn {
+				position: relative;
+				width: 16px;
+				height: 16px;
+				display: block;
+				margin-top: 2px;
+				margin-left: 15px;
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 16px;
+					height: 2px;
+					background-color: rgba(255, 255, 255, 0.7);
+					left: 0;
+					top: 50%;
+					transition: 0.2s ease;
+					margin-top: -5px;
+				}
+
+				&::after {
+					margin-top: 2px;
+					width: 10px;
+				}
+			}
+		}
+
+		.dropdown-menu {
+			position: absolute;
+			top: 105%;
+			left: 0;
+			/*             will-change: transform; */
+			z-index: 1000;
+			background-color: $black;
+			padding: 0.5rem;
+			font-size: $p-size;
+			color: $txt-color;
+			text-align: left;
+			list-style: none;
+			border-radius: $border-radius;
+
+			li {
+				margin-bottom: 0.3rem;
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				border-radius: $border-radius;
+				padding: 0.5rem;
+
+				&:hover {
+					color: $txt-color;
+					cursor: pointer;
+					background-color: $main-color;
+				}
+			}
+		}
+	}
+}

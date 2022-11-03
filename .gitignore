@@ -1,0 +1,6 @@
+.vscode/
+back-end/.flaskenv
+back-end/data/*.log
+back-end/scripts/
+front-end/node_modules/
+kaggle-dataset/
