@@ -8,4 +8,5 @@ back-end/data/series.csv
 back-end/data/series_ready.csv
 back-end/scripts/
 front-end/node_modules/
+front-end/package-lock.json
 kaggle-dataset/
