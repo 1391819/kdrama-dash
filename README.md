@@ -1,6 +1,6 @@
 <div align="center">
   <img src="utils/logo-light-nobg.png" alt="logo" width="128"/>
-  <h1>KDrama Dash</h1>
+  <h1>KDrama Dash - V1</h1>
 
 </div>
 
@@ -14,7 +14,7 @@
 - SCSS
 - Flask
 - API and EDA
-- Content-based Filtering
+- Content-based Filtering (cosine similarity)
 
 ## Project structure
 
