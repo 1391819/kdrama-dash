@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './search-bar.scss';
 
-import noPoster from '../../assets/unknown-poster.png';
+/* import noPoster from '../../assets/unknown-poster.png'; */
 
 const SearchBar = () => {
 	const [series, setSeries] = useState([]);

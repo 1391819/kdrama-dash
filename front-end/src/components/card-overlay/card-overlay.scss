@@ -1,10 +1,14 @@
 @use '../../scss/' as *;
 
 .overlay {
+	position: absolute;
 	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
 	background-color: $body-bg;
 	border-radius: $border-radius - 0.5;
-	transition: 0.3s ease-in-out;
+	transition: 0.2s ease-in-out;
 	opacity: 0;
 
 	.hover-content {
@@ -34,6 +38,6 @@
 	}
 
 	&:hover {
-		opacity: 0.9;
+		opacity: 0.85;
 	}
 }

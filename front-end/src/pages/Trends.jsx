@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import noPoster from '../assets/unknown-poster.png';
 
@@ -35,17 +37,19 @@ const Trends = () => {
 									<Link
 										to={'/series/' + data.tmdb_id}
 										className="poster"
-										style={
-											data.poster_img_url !== null &&
-											data.poster_img_url !== undefined
-												? {
-														backgroundImage: `url(${data.poster_img_url})`,
-												  }
-												: {
-														backgroundImage: `url(${noPoster})`,
-												  }
-										}
-									></Link>
+									>
+										<LazyLoadImage
+											src={
+												data.poster_img_url !== null &&
+												data.poster_img_url !==
+													undefined
+													? data.poster_img_url
+													: noPoster
+											}
+											alt="series poster"
+											effect="blur"
+										></LazyLoadImage>
+									</Link>
 									<div className="details">
 										<div className="details__heading">
 											<div className="title">
@@ -66,7 +70,7 @@ const Trends = () => {
 												) : null}
 											</div>
 										</div>
-										<h4 className="mt-2 mb-03">Synopsis</h4>
+										<h4 className="mt-1 mb-03">Synopsis</h4>
 										{data.synopsis !== null &&
 										data.synopsis !== undefined ? (
 											<p className="synopsis">
@@ -75,14 +79,14 @@ const Trends = () => {
 										) : (
 											<p>Not available.</p>
 										)}
-										<h4 className="mt-2 mb-03">Genres</h4>
+										<h4 className="mt-1 mb-03">Genres</h4>
 										{data.genres !== null &&
 										data.genres !== undefined ? (
 											<p>{data.genres}</p>
 										) : (
 											<p>/</p>
 										)}
-										<h4 className="mt-2 mb-03">
+										<h4 className="mt-1 mb-03">
 											Airing date
 										</h4>
 										{data.airing_date !== null &&

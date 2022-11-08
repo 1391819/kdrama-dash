@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import SimilarityRecommender from '../components/similarity-recommender/SimilarityRecommender';
 import noPoster from '../assets/unknown-poster.png';
@@ -54,19 +56,18 @@ const Detail = () => {
 								<p>{data.original_name}</p>
 							</div>
 							<div className="section__content mt-2 mb-2">
-								<div
-									className="detail__poster"
-									style={
-										data.poster_img_url !== null &&
-										data.poster_img_url !== undefined
-											? {
-													backgroundImage: `url(${data.poster_img_url})`,
-											  }
-											: {
-													backgroundImage: `url(${noPoster})`,
-											  }
-									}
-								></div>
+								<div className="detail__poster">
+									<LazyLoadImage
+										src={
+											data.poster_img_url !== null &&
+											data.poster_img_url !== undefined
+												? data.poster_img_url
+												: noPoster
+										}
+										alt="series poster"
+										effect="blur"
+									></LazyLoadImage>
+								</div>
 								<div className="detail__text">
 									{data.synopsis !== null &&
 									data.synopsis !== undefined ? (
@@ -83,7 +84,7 @@ const Detail = () => {
 											data.genres !== undefined ? (
 												<p>{data.genres}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Airing Date
@@ -92,7 +93,7 @@ const Detail = () => {
 											data.airing_date !== undefined ? (
 												<p>{data.airing_date}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Directors
@@ -101,7 +102,7 @@ const Detail = () => {
 											data.directors !== undefined ? (
 												<p>{data.directors}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Seasons
@@ -112,7 +113,7 @@ const Detail = () => {
 												undefined ? (
 												<p>{data.number_of_seasons}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Production companies
@@ -125,7 +126,7 @@ const Detail = () => {
 													{data.production_companies}
 												</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 										</div>
 										<div className="right-side">
@@ -136,7 +137,7 @@ const Detail = () => {
 											data.popularity !== undefined ? (
 												<p>{data.popularity}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Rating count
@@ -145,7 +146,7 @@ const Detail = () => {
 											data.rating_count !== undefined ? (
 												<p>{data.rating_count}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Next episode
@@ -158,7 +159,7 @@ const Detail = () => {
 													{data.next_episode_air_date}
 												</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Episodes
@@ -168,7 +169,7 @@ const Detail = () => {
 												undefined ? (
 												<p>{data.number_of_episodes}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 											<h3 className="mt-2 mb-03">
 												Networks
@@ -177,7 +178,7 @@ const Detail = () => {
 											data.networks !== undefined ? (
 												<p>{data.networks}</p>
 											) : (
-												<p>/</p>
+												<p>-</p>
 											)}
 										</div>
 									</div>

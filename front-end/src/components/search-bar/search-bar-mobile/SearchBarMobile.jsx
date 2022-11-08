@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './search-bar-mobile.scss';
 
-import noPoster from '../../../assets/unknown-poster.png';
+/* import noPoster from '../../../assets/unknown-poster.png'; */
 
 const SearchBarMobile = () => {
 	const [series, setSeries] = useState([]);

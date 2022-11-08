@@ -11,25 +11,32 @@
 }
 
 .slide {
-	border-radius: $border-radius;
 	flex: 0 0 100%;
 	opacity: 0;
 
-	&__image {
-		background-position: top;
-		background-repeat: no-repeat;
-		background-size: cover;
+	&__content {
 		border-radius: $border-radius;
-		aspect-ratio: 16 / 9;
-		transition: transform 0.2s ease-in-out;
+		position: relative;
 
-		@include mobile {
-			aspect-ratio: 4 / 3;
+		img {
+			vertical-align: top;
+			border-radius: $border-radius;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+			transition: transform 0.2s ease-in-out;
+
+			@include mobile {
+				aspect-ratio: 4 / 3;
+			}
 		}
 	}
 
 	&__overlay {
+		position: absolute;
 		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
 		@include flex(flex-end, center, unset);
 		background-color: $body-bg;
 		mask-image: linear-gradient(

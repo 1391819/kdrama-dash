@@ -211,7 +211,7 @@ img {
 	&__text {
 		padding-left: 3rem;
 		text-align: justify;
-		width: 100%;
+		flex: 2 0 0;
 
 		h3 {
 			color: $main-color;
@@ -253,7 +253,7 @@ img {
 		}
 
 		.header__rating {
-			@include flex(center, flex-end, unset);
+			@include flex(unset, flex-end, unset);
 			flex: 1 0 10rem;
 			margin-left: 2rem;
 
@@ -272,12 +272,15 @@ img {
 	}
 
 	&__poster {
-		background-position: top;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-radius: $border-radius;
-		aspect-ratio: 2 / 3;
-		flex: 0 0 25rem;
+		flex: 1 0 0;
+
+		img {
+			vertical-align: top;
+			border-radius: $border-radius;
+			object-fit: cover;
+			aspect-ratio: 2 / 3;
+			min-width: 300px;
+		}
 
 		@include tablet {
 			display: none;
@@ -293,15 +296,16 @@ img {
 		@include flex(unset, unset, unset);
 
 		.poster {
-			background-position: top;
-			background-repeat: no-repeat;
-			background-size: cover;
-			border-radius: $border-radius;
-			aspect-ratio: 2 / 3;
 			flex: 1 0 0;
 
 			@include tablet {
-				min-width: 30%;
+				min-width: 35%;
+			}
+
+			img {
+				border-radius: $border-radius;
+				aspect-ratio: 2 / 3;
+				object-fit: cover;
 			}
 		}
 
@@ -327,7 +331,7 @@ img {
 
 				.rating {
 					@include flex(center, flex-end, unset);
-					flex: 1 0 0;
+					flex: 2 0 0;
 					margin-left: 2rem;
 
 					&__inner {

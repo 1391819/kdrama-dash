@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Slide from './Slide';
-
 import './hero-slide.scss';
 
 const HeroSlide = () => {

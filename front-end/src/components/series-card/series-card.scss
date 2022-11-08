@@ -13,11 +13,15 @@
 	}
 
 	&__image {
-		background-position: top;
-		background-repeat: no-repeat;
-		background-size: cover;
 		border-radius: $border-radius;
-		aspect-ratio: 2 / 3;
+		position: relative;
+
+		img {
+			vertical-align: top;
+			border-radius: $border-radius;
+			aspect-ratio: 2 / 3;
+			object-fit: cover;
+		}
 	}
 
 	&__caption {
