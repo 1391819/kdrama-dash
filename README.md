@@ -2,11 +2,23 @@
   <img src="utils/logo-light-nobg.png" alt="logo" width="128"/>
   <h1>KDrama Dash - V1</h1>
 
+[www.nacu.me](https://nacu.me/)
+
 </div>
 
 <div align="justify">
 
 ## About
+
+A web application to discover and search for Korean TV series. Built using React and Flask. All the data was taken from TMDB's API and pre-processed by using EDA techniques on Kaggle's notebooks. 
+
+During its development, additional resources were created: a public [Kaggle dataset](https://www.kaggle.com/datasets/robertonacu/tmdb-kdramas-2022) and various scripts used to pre-process the data from TMDB's API (i.e., improved usability in case we'd want to transfer the local data to a cloud database).
+
+## Features
+- Search and go through various details regarding 1400+ Korean TV series
+- Series filtering based on genre, popularity, TMDB rating and release date
+- Series recommendations using Content-based Filtering
+- Desktop/tablet/mobile responsiveness
 
 ## Stack
 
@@ -50,7 +62,7 @@ $PROJECT_ROOT
 
 - [x] TMDB API EDA using Notebooks (Kaggle)
 - [x] Creation of scripts to obtain main application data (API, data pre-processing)
-- [x] Public [Kaggle dataset](https://www.kaggle.com/datasets/robertonacu/tmdb-kdramas-2022) creation
+- [x] Public Kaggle dataset creation
 - [x] Content-based Filtering (series recommendation feature)
 - [x] Flask app development 
 - [x] Front-end structure - homepage, series catalogue, trending, etc...
@@ -86,21 +98,29 @@ $PROJECT_ROOT
    ```sh
    git clone https://github.com/1391819/kdrama-dash
    ```
-2. Install NPM packages
-   ```sh
-   cd front-end
-   npm install
+2. Install all the required libraries
+   ```py
+    pip install -r requirements.txt
    ```
 3. Start Flask server
    ```sh
    cd back-end
    python server.py
    ```
-4. Start front-end
+4. Install NPM packages
    ```sh
    cd front-end
-   npm start
+   npm install
    ```
+5. Modify the package.json file and change the proxy to the flask server's local port
+   > "proxy": "http://localhost:5000/"
+6. Build the project
+   ```sh
+   cd front-end
+   npm run build
+   ```
+7. Go to the local site 
+   > localhost:portNumber
 
 ## Attributions
 
