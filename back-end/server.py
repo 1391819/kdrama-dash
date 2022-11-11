@@ -1,5 +1,7 @@
 # Importing dependencies
 from flask import Flask
+from flask.helpers import send_from_directory
+from flask_cors import CORS, cross_origin
 import pandas as pd
 import json
 from datetime import date
@@ -9,7 +11,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Init Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../front-end/build",
+            static_url_path="/front-end/")
+CORS(app)
 
 
 def get_series_df():
@@ -54,6 +58,7 @@ def create_similarity():
 
 
 @app.route("/api/trending", methods=["GET"])
+@cross_origin()
 def get_trending():
     """ Get 16 trending series (highest average rating)
 
@@ -81,6 +86,7 @@ def get_trending():
 
 
 @app.route("/api/popular", methods=["GET"])
+@cross_origin()
 def get_popular_series():
     """ Get popular series
 
@@ -104,6 +110,7 @@ def get_popular_series():
 
 
 @app.route("/api/banner", methods=["GET"])
+@cross_origin()
 def get_banner_series():
     """ Get four series with the highest average rating (for hero slide on home page)
 
@@ -137,6 +144,7 @@ def get_banner_series():
 
 
 @app.route("/api/random", methods=["GET"])
+@cross_origin()
 def get_random_series():
     """ Retrieve one random series
 
@@ -160,6 +168,7 @@ def get_random_series():
 
 
 @app.route("/api/series/<int:id>", methods=["GET"])
+@cross_origin()
 def get_series_by_id(id):
     """ Retrieve series data by id
 
@@ -186,6 +195,7 @@ def get_series_by_id(id):
 
 
 @app.route("/api/similarity/<int:id>", methods=["GET"])
+@cross_origin()
 def get_similarity(id):
     """ Get series similar (cosine similarity) to the selected one
 
@@ -229,6 +239,7 @@ def get_similarity(id):
 
 
 @app.route("/api/series/<string:category>", methods=["GET"])
+@cross_origin()
 def get_series_by_category(category):
     """ Retrieve all series associated with a particular genre
 
@@ -267,6 +278,7 @@ def get_series_by_category(category):
 
 
 @app.route("/api/genres", methods=["GET"])
+@cross_origin()
 def get_all_genres():
     """ Get all the genres
 
@@ -291,6 +303,7 @@ def get_all_genres():
 
 
 @app.route("/api/upcoming", methods=["GET"])
+@cross_origin()
 def get_upcoming_series():
     """ Get upcoming series
 
@@ -318,6 +331,7 @@ def get_upcoming_series():
 
 
 @app.route("/api/newest", methods=["GET"])
+@cross_origin()
 def get_newest_series():
     """ Get 14 top newest series
 
@@ -345,6 +359,7 @@ def get_newest_series():
 
 
 @app.route("/api/series", methods=["GET"])
+@cross_origin()
 def get_all_series():
     """ Get all series
 
@@ -361,6 +376,17 @@ def get_all_series():
 
     # return all_data
     return json_data
+
+
+@app.route("/")
+@cross_origin()
+def serve():
+    return send_from_directory(app.static_folder, "index.html")  # type: ignore
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return send_from_directory(app.static_folder, 'index.html')  # type: ignore
 
 
 # Running app
