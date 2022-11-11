@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a16b9ebf.css",
+    "main.js": "/static/js/main.5810fe12.js",
+    "static/media/unknown-poster.png": "/static/media/unknown-poster.c852c060d91bdbd8634b.png",
+    "static/media/tmdb_logo.svg": "/static/media/tmdb_logo.bf7f470b3821af1da7fa249c87dadea3.svg",
+    "index.html": "/index.html",
+    "main.a16b9ebf.css.map": "/static/css/main.a16b9ebf.css.map",
+    "main.5810fe12.js.map": "/static/js/main.5810fe12.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a16b9ebf.css",
+    "static/js/main.5810fe12.js"
+  ]
+}

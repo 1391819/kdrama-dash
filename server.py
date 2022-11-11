@@ -11,8 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Init Flask app
-app = Flask(__name__, static_folder="../front-end/build",
-            static_url_path="/front-end/")
+app = Flask(__name__, static_folder="front-end/build", static_url_path="")
 CORS(app)
 
 

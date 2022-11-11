@@ -1,13 +1,16 @@
 .vscode/
 .flaskenv
+
 data/*.log
 data/networks.csv
 data/people.csv
 data/production_companies.csv
 data/series.csv
 data/series_ready.csv
+
 scripts/
+kaggle-dataset/
+
 front-end/node_modules/
 front-end/package-lock.json
-kaggle-dataset/
-front-end/build/
+# front-end/build/
