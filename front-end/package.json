@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://kdrama-dash.herokuapp.com/",
+  "proxy": "http://localhost:5000/",
   "eslintConfig": {
     "extends": [
       "react-app",
