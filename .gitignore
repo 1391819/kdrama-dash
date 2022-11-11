@@ -10,3 +10,4 @@ back-end/scripts/
 front-end/node_modules/
 front-end/package-lock.json
 kaggle-dataset/
+front-end/build/
