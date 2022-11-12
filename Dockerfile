@@ -17,9 +17,10 @@ RUN mkdir ./api
 COPY back-end/data/genres.csv back-end/data/series_ready_w_tags.csv ./api/data/
 COPY back-end/requirements.txt back-end/server.py back-end/.flaskenv ./api/
 RUN pip install -r ./api/requirements.txt
-ENV FLASK_ENV production
-ENV FLASK_DEBUG 0
+ENV FLASK_ENV=production
+ENV FLASK_DEBUG=0
 
-EXPOSE 3000
+#EXPOSE 3000
 WORKDIR /app/api/
-CMD ["gunicorn", "-b", ":3000", "server:app"]
+#CMD ["gunicorn", "-b", ":3000", "server:app"]
+CMD ["gunicorn", "server:app"]
