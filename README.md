@@ -90,17 +90,17 @@ $PROJECT_ROOT
    git clone https://github.com/1391819/kdrama-dash
    ```
 2. Install all the required libraries
-   ```py
-    pip install -r requirements.txt
+   ```sh
+   cd back-end
+   pip install -r requirements.txt
    ```
 3. Start Flask server
    ```sh
-   cd back-end
    python server.py
    ```
 4. Install NPM packages
    ```sh
-   cd front-end
+   cd ../front-end
    npm install
    ```
 5. Modify the package.json file and add the proxy to the flask server's local port
@@ -111,7 +111,7 @@ $PROJECT_ROOT
    npm run build
    ```
 7. Go to the local site 
-   > [localhost:portNumber](http://localhost:3000/)
+   > [http://localhost:3000/](http://localhost:3000/)
 
 ## Attributions
 
