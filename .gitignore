@@ -1,5 +1,5 @@
 .vscode/
-.flaskenv
+back-end/.flaskenv
 
 back-end/data/*.log
 back-end/data/networks.csv
@@ -8,7 +8,7 @@ back-end/data/production_companies.csv
 back-end/data/series.csv
 back-end/data/series_ready.csv
 
-scripts/
+back-end/scripts/
 kaggle-dataset/
 
 front-end/node_modules/
