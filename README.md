@@ -27,6 +27,7 @@ During its development, additional resources were created: a public [Kaggle data
 - Flask
 - API and EDA
 - Content-based Filtering (cosine similarity)
+- Docker
 
 ## Project structure
 
@@ -61,13 +62,13 @@ $PROJECT_ROOT
 ## Roadmap
 
 - [x] TMDB API EDA using Notebooks (Kaggle)
-- [x] Creation of scripts to obtain main application data (API, data pre-processing)
+- [x] Scripts to obtain main application data (API, data pre-processing)
 - [x] Public Kaggle dataset creation
 - [x] Content-based Filtering (series recommendation feature)
 - [x] Flask server development 
 - [x] Front-end development - homepage, series catalogue, trending, etc...
 - [x] Desktop/Tablet/Mobile responsiveness
-- [x] Created Docker image of the application
+- [x] Docker image of the application
 - [ ] Safari/Firefox compatibility
 - [ ] Future features  
   - [ ] Sign up and sign in feature
