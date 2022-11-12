@@ -67,6 +67,7 @@ $PROJECT_ROOT
 - [x] Flask server development 
 - [x] Front-end development - homepage, series catalogue, trending, etc...
 - [x] Desktop/Tablet/Mobile responsiveness
+- [x] Created Docker image of the application
 - [ ] Safari/Firefox compatibility
 - [ ] Future features  
   - [ ] Sign up and sign in feature
