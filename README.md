@@ -2,7 +2,7 @@
   <img src="utils/logo-light-nobg.png" alt="logo" width="128"/>
   <h1>KDrama Dash - V1</h1>
 
-[www.nacu.me](https://nacu.me/)
+[kdrama-dash.herokuapp.com](https://kdrama-dash.herokuapp.com/)
 
 </div>
 
@@ -22,9 +22,7 @@ During its development, additional resources were created: a public [Kaggle data
 
 ## Stack
 
-- React
-- SCSS
-- Flask
+- React, Flask and SCSS
 - API and EDA
 - Content-based Filtering (cosine similarity)
 - Docker + Heroku
