@@ -27,7 +27,7 @@ During its development, additional resources were created: a public [Kaggle data
 - Flask
 - API and EDA
 - Content-based Filtering (cosine similarity)
-- Docker
+- Docker + Heroku
 
 ## Project structure
 
@@ -68,7 +68,7 @@ $PROJECT_ROOT
 - [x] Flask server development 
 - [x] Front-end development - homepage, series catalogue, trending, etc...
 - [x] Desktop/Tablet/Mobile responsiveness
-- [x] Docker image of the application
+- [x] Docker image of the application and deployment on Heroku
 - [ ] Safari/Firefox compatibility
 - [ ] Future features  
   - [ ] Sign up and sign in feature
