@@ -1,17 +1,18 @@
 # Importing dependencies
+import json
+from datetime import date
+
+import pandas as pd
 from flask import Flask
 from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
-import pandas as pd
-import json
-from datetime import date
 # https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 from sklearn.feature_extraction.text import CountVectorizer
 # https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Init Flask app
-app = Flask(__name__, static_folder="../front-end/build", static_url_path="")
+app = Flask(__name__, static_folder="../build", static_url_path="/")
 CORS(app)
 
 
@@ -379,15 +380,10 @@ def get_all_series():
 
 @app.route("/")
 @cross_origin()
-def serve():
-    return send_from_directory(app.static_folder, "index.html")  # type: ignore
-
-
-@app.errorhandler(404)
-def not_found(e):
+def index():
     return send_from_directory(app.static_folder, 'index.html')  # type: ignore
 
 
 # Running app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

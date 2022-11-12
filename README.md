@@ -101,7 +101,7 @@ $PROJECT_ROOT
    cd front-end
    npm install
    ```
-5. Modify the package.json file and change the proxy to the flask server's local port
+5. Modify the package.json file and add the proxy to the flask server's local port
    > "proxy": "http://localhost:5000/"
 6. Build the project
    ```sh
@@ -109,7 +109,7 @@ $PROJECT_ROOT
    npm run build
    ```
 7. Go to the local site 
-   > localhost:portNumber
+   > [localhost:portNumber](http://localhost:3000/)
 
 ## Attributions
 
