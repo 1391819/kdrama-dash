@@ -1,5 +1,5 @@
 .vscode/
-back-end/.flaskenv
+# back-end/.flaskenv
 
 back-end/data/*.log
 back-end/data/networks.csv
