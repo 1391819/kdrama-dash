@@ -378,9 +378,14 @@ def get_all_series():
     return json_data
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 @cross_origin()
 def index():
+    return send_from_directory(app.static_folder, 'index.html')  # type: ignore
+
+
+@app.errorhandler(404)
+def not_found(e):
     return send_from_directory(app.static_folder, 'index.html')  # type: ignore
 
 

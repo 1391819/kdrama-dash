@@ -2,7 +2,7 @@ FROM node:19-alpine as build-step
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
-COPY front-end/package.json front-end/static.json ./
+COPY front-end/package.json ./
 COPY front-end/public/ ./public
 COPY front-end/src/ ./src
 RUN npm install
