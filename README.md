@@ -81,7 +81,7 @@ $PROJECT_ROOT
 
 ## Getting Started
 
-### Installation
+### Development
 
 1. Clone the repo
    ```sh
@@ -106,7 +106,7 @@ $PROJECT_ROOT
 6. Build the project
    ```sh
    cd front-end
-   npm run build
+   npm start
    ```
 7. Go to the local site 
    > [http://localhost:3000/](http://localhost:3000/)
