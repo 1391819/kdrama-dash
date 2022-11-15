@@ -68,6 +68,7 @@ $PROJECT_ROOT
 - [x] Desktop/Tablet/Mobile responsiveness
 - [x] Docker image of the application and deployment on Heroku
 - [ ] Safari/Firefox compatibility
+- [ ] Automatic scheduling of data extraction from API scripts
 - [ ] Future features  
   - [ ] Sign up and sign in feature
   - [ ] Transfer main application data from .csv files to databases
