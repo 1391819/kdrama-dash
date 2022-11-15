@@ -10,7 +10,7 @@
 
 ## About
 
-A web application to discover and search for Korean TV series. Built using React and Flask. All the data was taken from TMDB's API and pre-processed using EDA techniques on Kaggle's notebooks. 
+A web application to discover and search for Korean TV series. Built using React and Flask. All the data was taken from TMDB's API and pre-processed initially on Kaggle's notebooks. 
 
 During its development, additional resources were created: a public [Kaggle dataset](https://www.kaggle.com/datasets/robertonacu/tmdb-kdramas-2022) and various scripts used to pre-process the data from TMDB's API (i.e., improved usability in case we'd want to transfer the local data to a cloud database).
 
@@ -23,7 +23,7 @@ During its development, additional resources were created: a public [Kaggle data
 ## Stack
 
 - React, Flask and SCSS
-- API and EDA
+- API and Data Analysis
 - Content-based Filtering (cosine similarity)
 - Docker + Heroku
 
@@ -59,7 +59,7 @@ $PROJECT_ROOT
 
 ## Roadmap
 
-- [x] TMDB API EDA using Notebooks (Kaggle)
+- [x] TMDB API data analysis using Notebooks (Kaggle)
 - [x] Scripts to obtain main application data (API, data pre-processing)
 - [x] Public Kaggle dataset creation
 - [x] Content-based Filtering (series recommendation feature)
