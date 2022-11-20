@@ -17,14 +17,14 @@ During its development, additional resources were created: a public [Kaggle data
 ## Features
 - Search and go through various details regarding 1400+ Korean TV series
 - Series filtering based on genre, popularity, TMDB rating and release date
-- Series recommendations using a Content-based Filtering algorithm
+- Recommendation system using an item-based collaborative filtering approach
 - Desktop/tablet/mobile responsiveness
 
 ## Stack
 
 - React, Flask and SCSS
 - API, Sklearn and Data Analysis
-- Content-based Filtering (cosine similarity)
+- Item-based collaborative filtering (cosine similarity)
 - Docker + Heroku
 
 ## Project structure
@@ -62,7 +62,7 @@ $PROJECT_ROOT
 - [x] TMDB API data analysis using Notebooks (Kaggle)
 - [x] Scripts to obtain main application data (API, data pre-processing)
 - [x] Public Kaggle dataset creation
-- [x] Content-based Filtering (series recommendation feature)
+- [x] Item-based collaborative filtering (recommendation system)
 - [x] Flask server development 
 - [x] Front-end development - homepage, series catalogue, trending, etc...
 - [x] Desktop/Tablet/Mobile responsiveness
@@ -73,6 +73,7 @@ $PROJECT_ROOT
   - [ ] Sign up and sign in feature
   - [ ] Transfer main application data from .csv files to databases
   - [ ] Build watch-list feature
+  - [ ] User-based collaborative filtering (or content-based)
   - [ ] Light and dark mode
 ## Highlights
 
