@@ -23,7 +23,7 @@ During its development, additional resources were created: a public [Kaggle data
 ## Stack
 
 - React, Flask and SCSS
-- API, Sklearn and Data Analysis
+- API, Sklearn and EDA
 - Item-based collaborative filtering (cosine similarity)
 - Docker + Heroku
 
