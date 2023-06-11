@@ -2,8 +2,6 @@
   <img src="utils/logo-light-nobg.png" alt="logo" width="128"/>
   <h1>KDrama Dash - V1</h1>
 
-[kdrama-dash.herokuapp.com](https://kdrama-dash.herokuapp.com/)
-
 </div>
 
 <div align="justify">
