@@ -10,11 +10,25 @@ A web application to discover and search for Korean TV series. Built using React
 
 During its development, additional publicly shared resources were created: a Kaggle [dataset](https://www.kaggle.com/datasets/robertonacu/tmdb-kdramas-2022), and a relatively simple [example](https://www.kaggle.com/code/robertonacu/kdrama-recommender) regarding how to use the provided dataset to create a recommendation system.
 
-## Features
-- Search and go through various details regarding 1500+ Korean TV series
-- Series filtering based on genre, popularity, TMDB rating and release date
-- Recommendation system using an item-based collaborative filtering approach
-- Desktop/tablet/mobile responsiveness
+## Roadmap
+
+- [x] TMDB API data analysis using Notebooks (Kaggle)
+- [x] Scripts to obtain main application data (API, data pre-processing)
+- [x] Public Kaggle dataset creation
+- [x] Recommendation system using an item-based collaborative filtering approach
+- [x] Flask server development
+- [x] Series filtering based on genre, popularity, TMDB rating and release date
+- [x] Front-end development - homepage, series catalogue, trending, etc...
+- [x] Desktop/Tablet/Mobile responsiveness
+- [x] Docker image of the application and deployment on Heroku
+- [ ] Safari/Firefox compatibility
+- [ ] Automatic scheduling of data extraction from API scripts
+- [ ] Future features  
+  - [ ] Sign up and sign in feature
+  - [ ] Transfer main application data from .csv files to databases
+  - [ ] Build watch-list feature
+  - [ ] User-based collaborative filtering (or content-based)
+  - [ ] Light and dark mode
 
 ## Stack
 
@@ -52,25 +66,7 @@ $PROJECT_ROOT
   │   # Flask server
   └── server.py
 ```
-
-## Roadmap
-
-- [x] TMDB API data analysis using Notebooks (Kaggle)
-- [x] Scripts to obtain main application data (API, data pre-processing)
-- [x] Public Kaggle dataset creation
-- [x] Item-based collaborative filtering (recommendation system)
-- [x] Flask server development 
-- [x] Front-end development - homepage, series catalogue, trending, etc...
-- [x] Desktop/Tablet/Mobile responsiveness
-- [x] Docker image of the application and deployment on Heroku
-- [ ] Safari/Firefox compatibility
-- [ ] Automatic scheduling of data extraction from API scripts
-- [ ] Future features  
-  - [ ] Sign up and sign in feature
-  - [ ] Transfer main application data from .csv files to databases
-  - [ ] Build watch-list feature
-  - [ ] User-based collaborative filtering (or content-based)
-  - [ ] Light and dark mode
+  
 ## Highlights
 
 <div align="center">
