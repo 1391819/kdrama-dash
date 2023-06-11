@@ -15,7 +15,7 @@ During its development, additional publicly shared resources were created: a Kag
 ## Roadmap
 
 - [x]  Research and gather data from TMDB’s API for Korean TV series
-- [x]  Pre-process the gathered data using Kaggle’s notebooks.
+- [x]  Pre-process the gathered data using Kaggle’s notebooks
 - [x]  Create a public Kaggle dataset
 - [x]  Perform exploratory data analysis (EDA) on the new dataset
 - [x]  Build the web application’s front-end
