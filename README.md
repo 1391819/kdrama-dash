@@ -12,23 +12,29 @@ During its development, additional publicly shared resources were created: a Kag
 
 ## Roadmap
 
-- [x] TMDB API data analysis using Notebooks (Kaggle)
-- [x] Scripts to obtain main application data (API, data pre-processing)
-- [x] Public Kaggle dataset creation
-- [x] Recommendation system using an item-based collaborative filtering approach
-- [x] Flask server development
-- [x] Series filtering based on genre, popularity, TMDB rating and release date
-- [x] Front-end development - homepage, series catalogue, trending, etc...
-- [x] Desktop/Tablet/Mobile responsiveness
-- [x] Docker image of the application and deployment on Heroku
-- [ ] Safari/Firefox compatibility
-- [ ] Automatic scheduling of data extraction from API scripts
-- [ ] Future features  
-  - [ ] Sign up and sign in feature
-  - [ ] Transfer main application data from .csv files to databases
-  - [ ] Build watch-list feature
-  - [ ] User-based collaborative filtering (or content-based)
-  - [ ] Light and dark mode
+## Roadmap
+
+- [x]  Research and gather data from TMDB’s API for Korean TV series
+- [x]  Pre-process the gathered data using Kaggle’s notebooks.
+- [x]  Create a public Kaggle dataset
+- [x]  Perform exploratory data analysis (EDA) on the new dataset
+- [x]  Build the web application’s front-end
+- [x]  Ensure desktop/tablet/mobile responsiveness
+- [x]  Build back-end using Flask
+- [x]  Provide series filtering based on genre, popularity, TMDB rating and release date
+- [x]  Develop an item-based collaborative filtering recommendation system using cosine similarity
+- [x]  Containerise the application using Docker for easy deployment
+- [x]  Deploy the web application on Heroku
+- [x]  Test the performance of the application
+- [x]  Improve the user interface and the overall user experience
+- [x]  Conduct thorough testing to ensure functionality and stability
+- [ ]  Ensure Safari/Firefox compatibility
+- [ ]  Automatic scheduling of data extraction from custom Python scripts (API “handlers”)
+- [ ]  Sign-up and sign-in features
+- [ ]  Convert whole application from .csv based to database based
+- [ ]  Build watch-list feature
+- [ ]  User-based collaborative filtering (or content-based)
+- [ ]  Light and dark options
 
 ## Stack
 
