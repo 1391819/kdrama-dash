@@ -20,7 +20,7 @@ During its development, additional publicly shared resources were created: a Kag
 - [x]  Perform exploratory data analysis (EDA) on the new dataset
 - [x]  Build the web application’s front-end
 - [x]  Ensure desktop/tablet/mobile responsiveness
-- [x]  Build back-end using Flask
+- [x]  Build back-end using Flask, ensuring efficient and optimised response times
 - [x]  Provide series filtering based on genre, popularity, TMDB rating and release date
 - [x]  Develop an item-based collaborative filtering recommendation system using cosine similarity
 - [x]  Containerise the application using Docker for easy deployment
