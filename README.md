@@ -12,27 +12,27 @@ During its development, additional publicly shared resources were created: a Kag
 
 ## Roadmap
 
-- [x]  Research and gather data from TMDB’s API for Korean TV series
-- [x]  Pre-process the gathered data using Kaggle’s notebooks
-- [x]  Create a public Kaggle dataset
-- [x]  Perform exploratory data analysis (EDA) on the new dataset
-- [x]  Build the web application’s front-end
-- [x]  Ensure desktop/tablet/mobile responsiveness
-- [x]  Build back-end using Flask, ensuring efficient and optimised response times
-- [x]  Provide series filtering based on genre, popularity, TMDB rating and release date
-- [x]  Develop an item-based collaborative filtering recommendation system using cosine similarity
-- [x]  Containerise the application using Docker for easy deployment
-- [x]  Deploy the web application on Heroku
-- [x]  Test the performance of the application
-- [x]  Improve the user interface and the overall user experience
-- [x]  Conduct thorough testing to ensure functionality and stability
-- [ ]  Ensure Safari/Firefox compatibility
+- [x]  Research TMDB’s API and retrieve series data
+- [x]  Pre-process the gathered data
+- [x]  Create public Kaggle dataset
+- [x]  Create public Kaggle notebook on how to create a simple recommendation system
+- [x]  Perform exploratory data analysis (EDA)
+- [x]  Build front-end
+- [x]  Desktop/tablet/mobile responsiveness
+- [x]  Build back-end
+- [x]  Implement series filtering features
+- [x]  Develop recommendation system
+- [x]  Containerise the application
+- [x]  Deploy the application
+- [x]  Test and improve performance
+- [x]  Improve UX/UI
+- [ ]  Safari/Firefox compatibility
 - [ ]  Automatic scheduling of data extraction from custom Python scripts (API “handlers”)
 - [ ]  Sign-up and sign-in features
-- [ ]  Convert whole application from .csv based to database based
-- [ ]  Build watch-list feature
+- [ ]  Convert the application from .csv based to database based
+- [ ]  Watch-list feature
 - [ ]  User-based collaborative filtering (or content-based)
-- [ ]  Light and dark options
+- [ ]  Light and dark modes
 
 ## Stack
 
