@@ -13,25 +13,23 @@ During its development, additional publicly shared resources were created: a Kag
 ## Roadmap
 
 - [x]  Research TMDB’s API and retrieve series data
-- [x]  Pre-process the gathered data
-- [x]  Create public Kaggle dataset
-- [x]  Create public Kaggle notebook on how to create a simple recommendation system
-- [x]  Perform exploratory data analysis (EDA)
-- [x]  Build front-end
-- [x]  Desktop/tablet/mobile responsiveness
-- [x]  Build back-end
-- [x]  Implement series filtering features
-- [x]  Develop recommendation system
-- [x]  Containerise the application
-- [x]  Deploy the application
-- [x]  Test and improve performance
+- [x]  Data cleaning
+- [x]  Public Kaggle dataset
+- [x]  Public Kaggle notebook (i.e., how to create a simple recommendation system)
+- [x]  Exploratory data analysis (EDA)
+- [x]  Front-end (desktop/tablet/mobile responsiveness)
+- [x]  Back-end
+- [x]  Series filtering features
+- [x]  Item-based collaborative filtering recommendation system
+- [x]  Containerise and deploy application
+- [x]  Test and optimise performance
 - [x]  Improve UX/UI
 - [ ]  Safari/Firefox compatibility
-- [ ]  Automatic scheduling of data extraction from custom Python scripts (API “handlers”)
+- [ ]  Automatic scheduling of data extraction from API (Airflow?)
 - [ ]  Sign-up and sign-in features
-- [ ]  Convert the application from .csv based to database based
+- [ ]  Convert application from .csv to database based
 - [ ]  Watch-list feature
-- [ ]  User-based collaborative filtering (or content-based)
+- [ ]  User-based collaborative filtering recommendation system
 - [ ]  Light and dark modes
 
 ## Stack
