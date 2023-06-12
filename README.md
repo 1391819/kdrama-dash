@@ -21,8 +21,8 @@ During its development, additional publicly shared resources were created: a Kag
 - [x] Develop back-end functionality
 - [x] Implement series filtering features
 - [x] Create item-based collaborative filtering recommendation system
-- [x] Containerize and deploy the application
-- [x] Test and optimize performance
+- [x] Containerise and deploy the application
+- [x] Test and optimise performance
 - [x] Improve UX/UI
 - [ ] Ensure compatibility with Safari and Firefox
 - [ ] Research automatic scheduling of data extraction with Airflow
