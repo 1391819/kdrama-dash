@@ -1,6 +1,6 @@
 click==8.1.2
 DateTime==4.7
-Flask==2.2.2
+Flask==2.2.5
 Flask-Cors==4.0.2
 gunicorn==22.0.0
 itsdangerous==2.1.2
