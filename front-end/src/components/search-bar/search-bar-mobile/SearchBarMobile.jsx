@@ -48,14 +48,19 @@ const SearchBarMobile = () => {
 
 	useEffect(() => {
 		const handleActive = (e) => {
-			if (e.path[0].tagName === 'SPAN') {
-				setActive(false);
+			const path = e.composedPath ? e.composedPath() : e.target.closest && e.target.closest('*');
+			if (path) {
+				const target = path[0] || e.target;
+
+				if (target.tagName === 'SPAN') {
+					setActive(false);
+				}
 			}
 		};
 		document.addEventListener('click', handleActive, true);
 
 		return () =>
-			document.body.removeEventListener('click', handleActive, true);
+			document.removeEventListener('click', handleActive, true);
 	});
 
 	return (

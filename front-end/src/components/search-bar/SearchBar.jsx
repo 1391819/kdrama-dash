@@ -15,18 +15,23 @@ const SearchBar = () => {
 
 	useEffect(() => {
 		const handleActive = (e) => {
-			if (e.path[0].tagName !== 'INPUT') {
-				setActive(false);
-			}
-
-			if (e.path[0].tagName === 'line' || e.path[0].tagName === 'svg') {
-				setQuery('');
+			const path = e.composedPath ? e.composedPath() : e.target.closest && e.target.closest('*');
+			if (path) {
+				const target = path[0] || e.target;
+				
+				if (target.tagName !== 'INPUT') {
+					setActive(false);
+				}
+				
+				if (target.tagName === 'line' || target.tagName === 'svg') {
+					setQuery('');
+				}
 			}
 		};
 		document.addEventListener('click', handleActive, true);
 
 		return () =>
-			document.body.removeEventListener('click', handleActive, true);
+			document.removeEventListener('click', handleActive, true);
 	});
 
 	useEffect(() => {

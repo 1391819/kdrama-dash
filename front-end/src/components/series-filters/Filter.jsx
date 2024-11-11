@@ -26,36 +26,28 @@ const Filter = ({ filterName, filterData, width, setFilter }) => {
 	}, [filterOpen]); */
 
 	useEffect(() => {
+
 		const handleDropdown = (e) => {
-			if (
-				e.path[0].className !== 'filter-item' &&
-				e.path[0].tagName !== 'P' &&
-				e.path[0].className !== 'filter-item__content' &&
-				e.path[0].className !== 'filter-value' &&
-				e.path[0].className !== 'dropdown-btn' &&
-				e.path[0].className !== 'dropdown-menu' &&
-				e.path[1].className !== 'dropdown-menu'
-			) {
-				setFilterOpen(false);
-			}
+		const path = e.composedPath ? e.composedPath() : [e.target];
 
-			if (e.path[0].className === 'filter-item') {
-				if (e.path[0].id !== filterName) {
-					setFilterOpen(false);
-				}
-			}
+		// Check if the click is outside the dropdown
+		if (
+			!path.some(
+			(el) =>
+				el.className === 'filter-item' ||
+				el.className === 'filter-item__content' ||
+				el.className === 'filter-value' ||
+				el.className === 'dropdown-btn' ||
+				el.className === 'dropdown-menu'
+			)
+		) {
+			setFilterOpen(false);
+		}
 
-			if (e.path[1].className === 'filter-item') {
-				if (e.path[1].id !== filterName) {
-					setFilterOpen(false);
-				}
-			}
-
-			if (e.path[2].className === 'filter-item') {
-				if (e.path[2].id !== filterName) {
-					setFilterOpen(false);
-				}
-			}
+		const filterItem = path.find((el) => el.className === 'filter-item');
+		if (filterItem && filterItem.id !== filterName) {
+			setFilterOpen(false);
+		}
 		};
 
 		document.addEventListener('click', handleDropdown, true);
