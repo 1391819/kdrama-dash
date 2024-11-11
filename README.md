@@ -98,14 +98,33 @@ $PROJECT_ROOT
    npm install
    ```
 5. Modify the package.json file and add the proxy to the flask server's local port
-   > "proxy": "http://localhost:5000/"
+   ```sh
+   "proxy": "http://localhost:5000/"
+   ```
 6. Start the project
    ```sh
    cd front-end
    npm start
    ```
-7. Go to the local site 
-   > [http://localhost:3000/](http://localhost:3000/)
+7. Access the application in your browser:
+   ```sh
+   http://localhost:5000/
+   ```
+
+### Spinning up the container
+
+1. Build the Docker container
+   ```sh
+   docker build -t kdrama-dash .
+   ```
+2. Run the container
+   ```sh
+   docker run -p 5000:5000 kdrama-dash
+   ```
+3. Access the application in your browser:
+   ```sh
+   http://localhost:5000/
+   ```
 
 ## Attributions
 
