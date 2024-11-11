@@ -1,4 +1,5 @@
 # Importing dependencies
+import os
 import json
 from datetime import date
 
@@ -6,8 +7,10 @@ import pandas as pd
 from flask import Flask
 from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
+
 # https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 from sklearn.feature_extraction.text import CountVectorizer
+
 # https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -17,7 +20,7 @@ CORS(app)
 
 
 def get_series_df():
-    """ Return all series
+    """Return all series
 
     Returns:
         pd.DataFrame: DataFrame containing all the series
@@ -33,7 +36,7 @@ def get_series_df():
 
 
 def create_similarity():
-    """ Get series data and similarity matrix created using cosine_similarity
+    """Get series data and similarity matrix created using cosine_similarity
 
     Returns:
         pd.DataFrame: Series data
@@ -60,7 +63,7 @@ def create_similarity():
 @app.route("/api/trending", methods=["GET"])
 @cross_origin()
 def get_trending():
-    """ Get 16 trending series (highest average rating)
+    """Get 16 trending series (highest average rating)
 
     Returns:
         JSON: Object containing series data
@@ -88,7 +91,7 @@ def get_trending():
 @app.route("/api/popular", methods=["GET"])
 @cross_origin()
 def get_popular_series():
-    """ Get popular series
+    """Get popular series
 
     Returns:
         JSON: Object containing popular series data
@@ -112,7 +115,7 @@ def get_popular_series():
 @app.route("/api/banner", methods=["GET"])
 @cross_origin()
 def get_banner_series():
-    """ Get four series with the highest average rating (for hero slide on home page)
+    """Get four series with the highest average rating (for hero slide on home page)
 
     Returns:
         JSON: Object containing series data
@@ -146,7 +149,7 @@ def get_banner_series():
 @app.route("/api/random", methods=["GET"])
 @cross_origin()
 def get_random_series():
-    """ Retrieve one random series
+    """Retrieve one random series
 
     Returns:
         JSON: Object containing randomised series data
@@ -170,7 +173,7 @@ def get_random_series():
 @app.route("/api/series/<int:id>", methods=["GET"])
 @cross_origin()
 def get_series_by_id(id):
-    """ Retrieve series data by id
+    """Retrieve series data by id
 
     Args:
         id (int): tmdb_id of the series
@@ -197,7 +200,7 @@ def get_series_by_id(id):
 @app.route("/api/similarity/<int:id>", methods=["GET"])
 @cross_origin()
 def get_similarity(id):
-    """ Get series similar (cosine similarity) to the selected one
+    """Get series similar (cosine similarity) to the selected one
 
     Args:
         id (int): tmdb_id of the series
@@ -218,8 +221,9 @@ def get_similarity(id):
 
         # Get top 4 similar series according to their cosine similarity
         # Sort the similarities and grab the first 10 values
-        series_list = sorted(list(enumerate(distances)),
-                             reverse=True, key=lambda x: x[1])[1:5]
+        series_list = sorted(
+            list(enumerate(distances)), reverse=True, key=lambda x: x[1]
+        )[1:5]
 
         # Grabbing data of similar series / series_list -> (index, similarity)
         series_indexes = [serie[0] for serie in series_list]
@@ -241,7 +245,7 @@ def get_similarity(id):
 @app.route("/api/series/<string:category>", methods=["GET"])
 @cross_origin()
 def get_series_by_category(category):
-    """ Retrieve all series associated with a particular genre
+    """Retrieve all series associated with a particular genre
 
     Returns:
         JSON: Object containing series data
@@ -280,7 +284,7 @@ def get_series_by_category(category):
 @app.route("/api/genres", methods=["GET"])
 @cross_origin()
 def get_all_genres():
-    """ Get all the genres
+    """Get all the genres
 
     Returns:
         JSON: Object containing all the available genres across all series
@@ -305,7 +309,7 @@ def get_all_genres():
 @app.route("/api/upcoming", methods=["GET"])
 @cross_origin()
 def get_upcoming_series():
-    """ Get upcoming series
+    """Get upcoming series
 
     Returns:
         JSON: Object containing upcoming series data
@@ -317,8 +321,9 @@ def get_upcoming_series():
     upcoming_series = series.sort_values(by="airing_date", ascending=True)
 
     # Filtering dates which are older than today, and grabbing first 14 series
-    upcoming_series = upcoming_series[(
-        upcoming_series["airing_date"] > str(date.today()))][0:14]
+    upcoming_series = upcoming_series[
+        (upcoming_series["airing_date"] > str(date.today()))
+    ][0:14]
 
     # Converting df to json
     data = upcoming_series.to_json(orient="records")
@@ -333,7 +338,7 @@ def get_upcoming_series():
 @app.route("/api/newest", methods=["GET"])
 @cross_origin()
 def get_newest_series():
-    """ Get 14 top newest series
+    """Get 14 top newest series
 
     Returns:
         JSON: Object containing 14 newest series data
@@ -345,8 +350,9 @@ def get_newest_series():
     newest_series = series.sort_values(by="airing_date", ascending=False)
 
     # Filtering dates which are older than today, and grabbing the first 14 values
-    newest_series = newest_series[(
-        newest_series["airing_date"] < str(date.today()))][0:14]
+    newest_series = newest_series[(newest_series["airing_date"] < str(date.today()))][
+        0:14
+    ]
 
     # Converting df to json
     data = newest_series.to_json(orient="records")
@@ -361,7 +367,7 @@ def get_newest_series():
 @app.route("/api/series", methods=["GET"])
 @cross_origin()
 def get_all_series():
-    """ Get all series
+    """Get all series
 
     Returns:
         JSON: Object containing all the available series data
@@ -381,14 +387,20 @@ def get_all_series():
 @app.route("/", methods=["GET"])
 @cross_origin()
 def index():
-    return send_from_directory(app.static_folder, 'index.html')  # type: ignore
+    return send_from_directory(app.static_folder, "index.html")  # type: ignore
 
 
 @app.errorhandler(404)
 def not_found(e):
-    return send_from_directory(app.static_folder, 'index.html')  # type: ignore
+    return send_from_directory(app.static_folder, "index.html")  # type: ignore
+
+
+@app.route("/health")
+def health():
+    return {"status": "healthy"}, 200
 
 
 # Running app
 if __name__ == "__main__":
-    app.run(debug=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)

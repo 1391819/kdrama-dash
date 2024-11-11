@@ -1,5 +1,9 @@
 .vscode/
-# back-end/.flaskenv
+
+back-end/__pycache__/
+back-end/env/
+back-end/venv/
+back-end/.flaskenv
 
 back-end/data/*.log
 back-end/data/networks.csv
@@ -13,4 +17,5 @@ kaggle-dataset/
 
 front-end/node_modules/
 front-end/package-lock.json
-# front-end/build/
+front-end/.env
+front-end/build/
